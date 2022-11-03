@@ -6,17 +6,17 @@ form.addEventListener(`submit`, onSubmit);
 function onSubmit (event) {
     event.preventDefault();
 
-const {
-    elements: { email, password }
-  } = event.currentTarget;
-
-    // const mail = event.currentTarget.elements.email.value;
-    // const password = event.currentTarget.elements.password.value;
-    if (email.value === "" || password.value === "") {
-        alert(`Всі поля повинні бути заповнені`);
-        return; 
-    }
-      console.log(`email: ${email.value}, Password: ${password.value}`);
+// const {
+//     elements: { email, password }
+//   } = event.currentTarget;
+  let formdata = {};
+    const mail = event.currentTarget.elements.email.value;
+  const password = event.currentTarget.elements.password.value;
+  if (mail !== "" && password !== "") {
+    formdata = { mail, password };
+    } else alert(`Всі поля повинні бути заповнені`);
+      
+      console.log(formdata);
     event.currentTarget.reset();
     
     
